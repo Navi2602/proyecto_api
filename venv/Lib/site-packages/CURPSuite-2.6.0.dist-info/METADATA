@@ -1,0 +1,111 @@
+Metadata-Version: 2.1
+Name: CURPSuite
+Version: 2.6.0
+Summary: Análisis y validación de la CURP Mexicana
+Home-page: https://github.com/jacobszpz/CURPSuite
+Author: Jacob Sánchez
+Author-email: jacobszpz@protonmail.com
+License: GNU General Public License v2
+Project-URL: Documentation, https://curpsuite.readthedocs.io
+Keywords: CURP,validation,analysis,Mexico
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Legal Industry
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: Spanish
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: unidecode
+
+# CURP Suite
+
+[![PyPI Version][version-badge]][pypi] [![Python versions][python-version-badge]][pypi] [![License: GPL  v2][license-badge]][gnu] [![Build][build-badge]][actions] [![ReadTheDocs][docs-badge]][rtd] [![Downloads per month][downloads-badge]][pypi-stats]
+
+**CURP Suite** es una librería de análisis y validación de la CURP Mexicana.
+
+```python
+>>> from curp import CURP
+>>> c = CURP("SABC560626MDFLRN01")
+>>> c.fecha_nacimiento
+datetime.date(1956, 6, 26)
+>>> c.sexo
+<Sexo.MUJER: 2>
+>>> c.entidad
+'Ciudad de México'
+>>> c.nombre_valido("Concepción")
+True
+
+```
+
+
+
+CURP Suite te permite extraer toda la información que contiene una CURP de forma conveniente. Además, toda la validación es automática. CURP Suite está diseñado para dar soporte a toda la especificación oficial de la CURP.
+
+
+
+## Instalación
+
+##### Desde PyPI
+
+```bash
+$ python3 -m pip install CURPSuite
+```
+
+CURP Suite soporta Python 3.8+.
+
+
+
+## Características
+
+- Extracción de datos
+  - Fecha de nacimiento como objeto `datetime.date`
+  - Sexo compatible con [ISO/IEC 5218][iso5218]
+  - Nombre y clave [ISO 3166-2][iso3166] de la entidad federativa de nacimiento
+- Representación JSON de datos extraídos
+- Validación con nombres y apellidos
+- Validación con nombre completo
+- Interfaz de Línea de Comandos
+
+
+
+## Documentación
+
+Disponible en https://curpsuite.readthedocs.io.
+
+
+
+## Licencia
+
+Este programa se distribuye bajo la licencia [GPLv2.0][license], más información en el sitio de la [Free Software Foundation][gnu].
+
+
+
+<!-- MARKDOWN LINK REFERENCES -->
+
+[iso5218]: https://en.wikipedia.org/wiki/ISO/IEC_5218 "ISO/IEC 5218"
+[iso3166]: https://es.wikipedia.org/wiki/ISO_3166-2 "ISO 3166-2"
+[git]: https://git-scm.com/	"Git"
+[python]: https://www.python.org/ "Python.org"
+[pipenv]: https://pipenv.pypa.io/en/latest/ "Pipenv"
+[license]: LICENSE "General Public License"
+[gnu]: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html "Free Software Foundation"
+[pypi]: https://pypi.org/project/CURPSuite
+[license-badge]: https://img.shields.io/github/license/jacobszpz/CURPSuite
+[version-badge]: https://img.shields.io/pypi/v/CURPSuite
+[python-version-badge]: https://img.shields.io/pypi/pyversions/CURPSuite
+[build-badge]: https://img.shields.io/github/workflow/status/jacobszpz/CURPSuite/Python%20CI/master
+[actions]: https://github.com/jacobszpz/CURPSuite/actions
+[docs-badge]: https://img.shields.io/readthedocs/curpsuite
+[rtd]: https://curpsuite.readthedocs.io
+[rtd-changelog]: https://curpsuite.readthedocs.io/es/latest/CHANGELOG.html
+[downloads-badge]: https://img.shields.io/pypi/dm/curpsuite
+[pypi-stats]: https://pypistats.org/packages/curpsuite
+
+
